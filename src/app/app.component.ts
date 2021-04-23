@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'scryanalytics';
+  title = 'crownstack';
+
+  public breadcumData = [
+    { name: 'Home', url: '/', active: true, location: null, branch: null }];
+
 }

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row filter-heading">
+        <div class="filter-heading-text">Add Data</div>
+        <div class="filter-heading-close-text" (click)="closeDialog(false)">X Close</div>
+    </div>
+    <form [formGroup]="stockForm">
+        <div class="formData">
+            <div class="row">
+                <div class="col-md-11 mb-2">
+                    <span>Open</span>
+                    <input class="w-100 mt-2 mb-2 stock-text" type="number" step=0.01 placeholder="Enter Open Value"
+                        formControlName="Open">
+                    <span class="error" *ngIf="Open.hasError('required') && Open.touched">This field is required</span>
+                </div>
+                <div class="col-md-11 mt-3">
+                    <span>Close</span>
+                    <input class="w-100 mt-2 mb-2 stock-text" type="number" step=0.01 placeholder="Enter Close Value"
+                        formControlName="Close">
+                    <span class="error" *ngIf="Close.hasError('required') && Close.touched">This field is required
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row filter-heading1">
+            <div class="filter-heading-text1">
+                <button (click)='saveStockData()' [disabled]="stockForm.invalid" class="btn-height currency-btn">
+                    <span class="financialText">Next</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
